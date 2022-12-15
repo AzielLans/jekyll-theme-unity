@@ -1,10 +1,6 @@
 # jekyll-theme-unity Configuration
 
 
-# if you run it locally:
-# theme: jekyll-theme-unity
-
-#  if you using GitHub-Pages:
 remote_theme: Involts/jekyll-theme-unity
 
 title: Jekyll Theme Unity
