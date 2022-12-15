@@ -1,0 +1,37 @@
+
+<nav class="site-header" id="nav">
+  <input type="checkbox" id="closebtn">
+  <label for="closebtn">
+    <span class="material-symbols-rounded">
+      menu_open
+      </span>
+  </label>
+    <div class="nav-links-container">
+        <a class="nav-links" href="{{site.header.header_1_link | relative_url }}">
+          <span class="material-symbols-rounded">
+            {{ site.header.header_1_icon }}
+            </span>
+          <p>{{ site.header.header_1_name}}</p>
+        </a>
+        <a href="{{site.header.header_home_link | relative_url }}" class="nav-links">
+          <span class="material-symbols-rounded">
+            area_chart
+            </span>
+          <p>Home</p>
+        </a>
+        <a class="nav-links" href="{{site.header.header_2_link | relative_url }}">
+          <span class="material-symbols-rounded">
+            {{ site.header.header_2_icon }}
+            </span>
+          <p>{{ site.header.header_2_name}}</p>
+        </a>
+        <a class="nav-links" href="{{site.header.header_3_link | relative_url }}">
+          <span class="material-symbols-rounded">
+            {{ site.header.header_3_icon }}
+            </span>
+          <p>{{ site.header.header_3_name}}</p>
+        </a>
+    </div>
+    
+</nav>
+<div class="site-nav-scrim" id="nav-scrim"></div>

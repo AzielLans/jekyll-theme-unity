@@ -1,0 +1,116 @@
+# jekyll-theme-unity Configuration
+
+
+# if you run it locally:
+# theme: jekyll-theme-unity
+
+#  if you using GitHub-Pages:
+remote_theme: Involts/jekyll-theme-unity
+
+title: Jekyll Theme Unity
+description:  Based on Material 3 design principles
+
+# Change the following value to '/PROJECT_NAME' ONLY IF your site type is GitHub Pages Project sites
+# and doesn't have a custom domain.
+baseurl: /jekyll-theme-unity
+# Change the value to 'https://GITHUB_USERNAME.github.io/'
+url: 'https://involts.github.io/' 
+
+permalink: /Post/:title/
+
+show_descriptions: true
+
+# icons are from https://fonts.google.com/icons
+header:
+  header_1_name: Download
+  header_1_icon: file_download
+  header_1_link: 
+
+  header_2_name: Post
+  header_2_icon: list
+  header_2_link: /Posts/
+
+  header_3_name: About
+  header_3_icon: info
+  header_3_link: /About/
+
+  header_home_link: /home/
+
+footer:
+#  Section 1
+ footer_section_1_title: jekyll-theme-unity
+ footer_section_1_links_1_name: Download
+ footer_section_1_links_1_link: / 
+
+ footer_section_1_links_2_name: Post
+ footer_section_1_links_2_link: /Posts/
+
+ footer_section_1_links_3_name: About
+ footer_section_1_links_3_link: /About/
+
+#  Section 2
+ footer_section_2_title: You're Site
+ footer_section_2_links_1_name: Lorem
+ footer_section_2_links_1_link: / 
+
+ footer_section_2_links_2_name: ispum
+ footer_section_2_links_2_link: / 
+
+ footer_section_2_links_3_name: dolor
+ footer_section_2_links_3_link: / 
+
+# Section 3
+ footer_section_3_title: Customize
+ footer_section_3_links_1_name: Lorem
+ footer_section_3_links_1_link: / 
+
+ footer_section_3_links_2_name: ispum
+ footer_section_3_links_2_link: / 
+
+ footer_section_3_links_3_name: dolor
+ footer_section_3_links_3_link: / 
+#Paginate
+paginate: true
+paginate: 6
+paginate_path: "/Posts/page:num/"
+
+date_format: "%b %-d, %Y"
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-paginate
+  - jekyll-redirect-from
+
+whitelist:
+  - jekyll-redirect-from
+
+ 
+collections:
+  tabs:
+    output: true
+    sort_by: order
+
+exclude:
+  - "*.gem"
+  - "*.gemspec"
+  - bin
+  - README.md
+  - LICENSE
+  - docs
+  - RubyGems
+  - gm_bld
+  - gitignore
+
+  #---------------The options BELLOW are not recommended to be modified------------------#
+
+kramdown:
+  syntax_highlighter: rouge
+  syntax_highlighter_opts:   # Rouge Options › https://github.com/jneen/rouge#full-options
+    css_class: highlight
+    # default_lang: console
+    span:
+      line_numbers: false
+    block:
+      line_numbers: true
+      start_line: 1

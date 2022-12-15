@@ -1,0 +1,384 @@
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @include body-medium;
+  @include background;
+  @include horizontal-scroll;
+  -webkit-text-size-adjust: 100%;
+  font-kerning: normal;
+  min-height: 100vh;
+  flex-direction: column;
+  overflow-wrap: break-word;
+  display: flex;
+  line-height: 40px;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+hr,
+dl,
+dd,
+ol,
+ul,
+figure {
+  margin: 0;
+  padding: 0;
+  margin-bottom: 15px;
+}
+
+p {
+  line-height: 26px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  @include headline-large;
+  line-height: 3rem;
+}
+h2 {
+  @include headline-medium;
+  line-height: 3rem;
+}
+h3 {
+  @include headline-small;
+  line-height: 3rem;
+}
+h4 {
+  @include title-large;
+  line-height: 3rem;
+}
+h5 {
+  @include title-medium;
+  line-height: 3rem;
+}
+h6 {
+  @include title-small;
+  line-height: 3rem;
+}
+
+a {
+  @include link(
+    $md-sys-color-on-secondary-container-dark,
+    $md-sys-color-on-primary-container-dark,
+    auto
+  );
+}
+img {
+  @include shape-extra-large;
+  width: 100%;
+}
+strong {
+  font-family: $md-ref-typeface-brand;
+}
+table {
+  width: 100%;
+  margin-bottom: 20px;
+  border-collapse: collapse;
+  border: 1px solid $md-sys-color-surface-variant-dark;
+  th {
+    background: $md-sys-elevation-level1;
+    color: $md-sys-color-on-surface-variant-dark;
+  }
+  td,
+  th {
+    padding: 16px 24px;
+    border: 1px solid $md-sys-color-surface-variant-dark;
+    vertical-align: middle;
+  }
+}
+pre,
+code {
+  @include horizontal-scroll();
+  @include shape-small;
+  border: 1px solid $md-sys-color-outline-dark;
+  font-weight: 700;
+  background: $md-sys-elevation-level1;
+  padding: 1px 5px;
+
+  a {
+    color: inherit !important;
+    border-bottom: none !important;
+    pointer-events: none;
+  }
+}
+pre {
+  overflow-x: auto;
+  border: 0;
+
+  code {
+    border: 0;
+    padding-right: 0;
+    padding-left: 0;
+  }
+}
+div {
+  &[class^="highlighter-rouge"],
+  &.language-plaintext.highlighter-rouge,
+  &.language-console.highlighter-rouge,
+  &.language-terminal.highlighter-rouge,
+  &.nolineno {
+    pre.lineno {
+      display: none;
+    }
+
+    td.rouge-code {
+      padding: 8px 12px;
+    }
+
+    pre.highlight {
+      padding: 0px;
+      padding-bottom: 0px;
+    }
+  }
+}
+li {
+  > ul,
+  > ol {
+    margin-bottom: 0;
+  }
+}
+ul,
+ol {
+  margin-left: 20px;
+}
+
+.rouge-table {
+  width: 0%;
+  border: 0px;
+  margin-bottom: 0px;
+  td.rouge-code {
+    padding-left: 1rem;
+    border: 0px;
+  }
+  .rouge-gutter {
+    padding: 0px;
+    border: 0px;
+  }
+}
+.highlight {
+  @include shape-medium;
+  margin-bottom: 15px;
+  > pre {
+    border: 1px solid $md-sys-color-outline-dark;
+  }
+
+  pre {
+    margin-bottom: 0;
+    line-height: 1.5rem;
+    word-wrap: normal;
+    background: $md-sys-color-surface-dark;
+    /* Fixed Safari overflow-x */
+  }
+  table {
+    td pre {
+      overflow: visible; // Fixed iOS safari overflow-x
+      word-break: normal; // Fixed iOS safari linenos code break
+    }
+  }
+
+  .lineno {
+    padding-top: 7px;
+    padding-bottom: 7px;
+    padding-left: 7px;
+    padding-right: 0px;
+    width: 1%;
+    min-width: 20px;
+    text-align: right;
+    color: $md-ref-palette-neutral-50;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+  }
+
+  //  set the dollar sign to non-selectable
+  .nv {
+    user-select: none;
+  }
+
+  &:focus {
+    border-color: $md-sys-color-primary-dark;
+  }
+}
+.wrapper {
+  padding: 30px 30px 0 0;
+  margin: 0 auto 0 7rem;
+  max-width: 1168px;
+  animation-duration: 0.2s;
+  animation-fill-mode: both;
+  animation-name: wrapper-animation;
+  @media (max-width: 1000px) {
+    margin: 0 auto 0 2rem;
+    max-width: 1168px;
+    padding-top: 6rem;
+  }
+}
+.wrapper-animation {
+  @include duration-550;
+  @include easing-standard;
+}
+.wrapper-post {
+  padding: 30px 30px 0 0;
+  animation-duration: 0.2s;
+  animation-fill-mode: both;
+  animation-name: wrapper-animation;
+  margin: 0 auto 0 7rem;
+  max-width: 850px;
+  @media (max-width: 1309px) {
+    max-width: 1168px;
+  }
+  @media (max-width: 1000px) {
+    margin: 0 auto 0 2rem;
+    max-width: 1168px;
+    padding-top: 6rem;
+  }
+}
+.wrapper-404 {
+  display: flex;
+  word-break: break-word;
+  gap: 15px;
+  padding: clamp(95px, 2%, 400px) 0px 0px clamp(95px, 2%, 400px);
+  animation-duration: 0.2s;
+  animation-fill-mode: both;
+  animation-name: wrapper-animation;
+  .content-wrapper {
+    p {
+      margin: 0;
+    }
+    .btn {
+      @include duration-550;
+      @include easing-standard;
+      @include title-large;
+      width: 195px;
+      height: 82px;
+      margin-top: 15px;
+    }
+  }
+  .svgcontainer {
+    @include shape-extra-large;
+    fill: $md-sys-color-on-error-dark;
+    background-color: $md-sys-color-error-dark;
+    padding: 16px;
+    width: 10rem;
+    display: flex;
+  }
+  @media (max-width: $pc-width) {
+    flex-direction: column-reverse;
+  }
+  @media (max-width: $mobile-width) {
+    padding: 0px;
+  }
+}
+.material-symbols-rounded {
+  font-size: 24px;
+}
+.btn {
+  @include label-large;
+  @include btn;
+  background: $md-sys-color-primary-dark;
+  color: $md-sys-color-on-primary-dark;
+  p {
+    margin: 0px;
+  }
+  &:hover {
+    background: $md-sys-color-on-surface-variant-2-dark;
+    background-color: $md-sys-color-on-primary-dark;
+    color: initial;
+  }
+}
+.post-toc {
+  position: sticky;
+  top: 2rem;
+  align-self: start;
+  padding-left: 0;
+  border-left: 1px solid $md-sys-color-outline-dark;
+  // min-height: 100vh;
+  overflow-wrap: break-word;
+
+  li {
+    margin-left: 1rem;
+    margin: 7px;
+    padding-left: 1rem;
+    list-style: none;
+  }
+  ul,
+  ol {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  li.active > a {
+    @include shape-medium;
+    display: flex;
+    border: 1px solid $md-sys-color-outline-dark;
+    animation-duration: 0.3s;
+    animation-fill-mode: both;
+    animation-name: TOC-Entrance;
+  }
+  li.decative {
+    a {
+      animation-duration: 0.3s;
+      animation-fill-mode: both;
+      animation-name: TOC-Exit;
+      opacity: 0.5;
+
+      &:hover {
+        opacity: 1;
+      }
+    }
+    ul {
+      display: none;
+    }
+  }
+
+  a {
+    color: $md-sys-color-on-surface-dark;
+    transition: all 50ms ease-in-out;
+    padding-left: 1rem;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  @media (max-width: 1309px) {
+    display: none;
+    width: 0px;
+  }
+}
+
+.back-to-top {
+  @include shape-medium;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 0px;
+  background: $md-sys-color-tertiary-dark;
+  color: $md-sys-color-on-tertiary-dark;
+  box-shadow: 0px 4px 8px 3px rgba(0, 0, 0, 0.15), 0px 1px 3px rgba(0, 0, 0, 0.3);
+  &:hover {
+    box-shadow: 0px 6px 10px 4px rgba(0, 0, 0, 0.15), 0px 2px 3px rgba(0, 0, 0, 0.3);
+  }
+}

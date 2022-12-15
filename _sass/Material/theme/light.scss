@@ -1,0 +1,72 @@
+//
+//  Copyright 2016 Google Inc. All rights reserved.
+
+//  Licensed under the Apache License, Version 2.0 (the "License";
+//  you may not use this file except in compliance with the License.
+//  You may obtain a copy of the License at
+
+//      http://www.apache.org/licenses/LICENSE-2.0
+
+//  Unless required by applicable law or agreed to in writing, software
+//  distributed under the License is distributed on an "AS IS" BASIS,
+//  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+//  See the License for the specific language governing permissions and
+//  limitations under the License.
+  // Surface tint
+  $md-sys-color-surface-tint: $md-sys-color-primary;
+  // Surface tint color
+  $md-sys-color-surface-tint-color: $md-sys-color-primary;
+  // On error container
+  $md-sys-color-on-error-container: $md-ref-palette-error-10;
+  // On error
+  $md-sys-color-on-error: $md-ref-palette-error-100;
+  // Error container
+  $md-sys-color-error-container: $md-ref-palette-error-90;
+  // On tertiary container
+  $md-sys-color-on-tertiary-container: $md-ref-palette-tertiary-10;
+  // On tertiary
+  $md-sys-color-on-tertiary: $md-ref-palette-tertiary-100;
+  // Tertiary container
+  $md-sys-color-tertiary-container: $md-ref-palette-tertiary-90;
+  // Tertiary
+  $md-sys-color-tertiary: $md-ref-palette-tertiary-40;
+  // Shadow
+  $md-sys-color-shadow: $md-ref-palette-neutral-0;
+  // Error
+  $md-sys-color-error: $md-ref-palette-error-40;
+  // Outline
+  $md-sys-color-outline: $md-ref-palette-neutral-variant-50;
+  // On background
+  $md-sys-color-on-background: $md-ref-palette-neutral-10;
+  // Background
+  $md-sys-color-background: $md-ref-palette-neutral-99;
+  // Inverse on surface
+  $md-sys-color-inverse-on-surface: $md-ref-palette-neutral-95;
+  // Inverse surface
+  $md-sys-color-inverse-surface: $md-ref-palette-neutral-20;
+  // On surface variant
+  $md-sys-color-on-surface-variant: $md-ref-palette-neutral-variant-30;
+  // On surface
+  $md-sys-color-on-surface: $md-ref-palette-neutral-10;
+  // Surface Variant
+  $md-sys-color-surface-variant: $md-ref-palette-neutral-variant-90;
+  // Surface
+  $md-sys-color-surface: $md-ref-palette-neutral-99;
+  // On secondary container
+  $md-sys-color-on-secondary-container: $md-ref-palette-secondary-10;
+  // On secondary
+  $md-sys-color-on-secondary: $md-ref-palette-secondary-100;
+  // Secondary container
+  $md-sys-color-secondary-container: $md-ref-palette-secondary-90;
+  // Secondary
+  $md-sys-color-secondary: $md-ref-palette-secondary-40;
+  // Inverse primary
+  $md-sys-color-inverse-primary: $md-ref-palette-primary-80;
+  // On primary container
+  $md-sys-color-on-primary-container: $md-ref-palette-primary-10;
+  // On primary
+  $md-sys-color-on-primary: $md-ref-palette-primary-100;
+  // Primary container
+  $md-sys-color-primary-container: $md-ref-palette-primary-90;
+  // Primary
+  $md-sys-color-primary: $md-ref-palette-primary-40;

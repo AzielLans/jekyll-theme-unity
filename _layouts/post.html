@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  {%- include Head.html -%}
+</head>
+
+<body>
+  {%- include Header.html -%}
+  <main class="post-content">
+    {%- include assets/site-top-bar.html -%}
+    <div class="wrapper-post">
+      <header class="post-header">
+        <span class="post-meta">
+          {%- assign date_format = site.fica.date_format | default: "%b %-d, %Y" -%}
+          <time class="text-unmuted" datetime="{{ page.date | date_to_xmlschema }}">
+            {{ page.date | date: date_format }}
+          </time>
+        </span>
+        {%- if page.modified_date -%}
+        <span class="post-change-date post-meta">
+          {%- assign mdate = page.modified_date |
+          date_to_xmlschema -%}
+          <span class="material-symbols-rounded">
+            edit
+            </span>
+          <time class="text-unmuted" datetime="{{ mdate }}">
+            {{ mdate | date: date_format }}
+          </time>
+        </span>
+        {%- endif -%}
+        <h1 class="post-title">{{ page.title | escape }}</h1>
+        <div class="post-author post-meta">
+           {% if page.author %} {% assign author = page.author %} {% endif %}
+          <span itemprop="name">{{ author }}</span>
+        </div>
+      </header>
+      {{ content }}
+    </div>
+    <div class="post-toc" id="toc">
+      {% include assets/toc.html html=content h_min=1 h_max=3 %}
+    </div>
+    {% include assets/btt.html %}
+  </main>
+  <script src="{{ "assets/js/main.js" | relative_url }}"></script>
+</body>
+
+</html>
