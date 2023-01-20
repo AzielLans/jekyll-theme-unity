@@ -27,6 +27,7 @@
     margin-left: 4px;
     color: var(--md-sys-color-on-surface-variant);
     cursor: pointer;
+    user-select: none;
   }
   input {
     display: none;
@@ -302,6 +303,7 @@
     margin: 0;
     width: 48px;
     height: 48px;
+    user-select: none;
   }
 }
 .site-banner {
