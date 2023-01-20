@@ -1,19 +1,43 @@
-.site-header {
+.site-nav-side-bar {
   @include duration-350;
   @include easing-standard-decelerate;
   transform: translateX(0rem);
   z-index: 6;
-  padding-top: 30px;
   width: 90px;
+  height: -webkit-fill-available;
   position: fixed;
-  height: 440rem;
   display: flex;
   flex-direction: column;
   padding: 12px;
+  overflow: auto;
+
+  label {
+    @include link(
+      var(--md-sys-color-on-surface),
+      var(--md-sys-color-on-background),
+      var(--md-sys-color-on-surface-variant-2)
+    );
+    @include shape-extra-large;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    margin-bottom: 8px;
+    margin-left: 4px;
+    color: var(--md-sys-color-on-surface-variant);
+    cursor: pointer;
+  }
+  input {
+    display: none;
+  }
+  &:last-child {
+    margin-top: auto;
+  }
+
   .nav-links-container {
     padding-right: 10px;
     text-align: center;
-    height: 56px;
     display: flex;
     flex-direction: column;
     margin-top: 20px;
@@ -21,7 +45,7 @@
     .nav-links {
       @include label-medium;
       background: inherit;
-      color: $md-sys-color-on-surface-variant-dark;
+      color: var(--md-sys-color-on-surface-variant);
       display: block;
       width: 80px;
       padding-left: 0;
@@ -40,29 +64,29 @@
         border-radius: 16px;
         padding: 0;
       }
-      &:hover {
-        color: $md-sys-color-on-surface-dark;
-        .material-symbols-rounded {
-          background: $md-sys-color-on-surface-variant-2-dark;
-        }
-      }
-      &:first-child {
-        @include label-medium;
-        color: $md-sys-color-on-surface-variant-dark;
-        .material-symbols-rounded {
-          @include elevation1($md-sys-color-primary-container-dark);
-          color: $md-sys-color-on-primary-container-dark;
-          &:hover {
-            @include elevation5($md-sys-color-primary-container-dark);
-          }
-        }
-      }
       p {
         align-self: flex-start;
         margin: 0;
       }
+      &:hover {
+        color: var(--md-sys-color-on-surface);
+        .material-symbols-rounded {
+          background: var(--md-sys-color-on-surface-variant-2);
+        }
+      }
+      &:first-child {
+        @include label-medium;
+        color: var(--md-sys-color-on-surface-variant);
+        .material-symbols-rounded {
+          @include elevation1(var(--md-sys-color-primary-container));
+          color: var(--md-sys-color-on-primary-container);
+          &:hover {
+            @include elevation5(var(--md-sys-color-primary-container));
+          }
+        }
+      }
     }
-    .active {
+    .nav-links-active {
       .material-symbols-rounded {
         &::before {
           content: "";
@@ -70,8 +94,8 @@
           width: 100%;
           height: 100%;
           border-radius: 100px;
-          background-color: $md-sys-color-surface-dark;
-          background: $md-sys-color-on-surface-variant-2-dark;
+          background-color: var(--md-sys-color-surface);
+          background: var(--md-sys-color-on-surface-variant-2);
           animation-duration: 0.2s;
           animation-fill-mode: both;
           animation-name: activeanimation;
@@ -80,44 +104,58 @@
       }
     }
   }
-  label {
-    @include link(
-      $md-sys-color-on-surface-dark,
-      $md-sys-color-on-background-dark,
-      $md-sys-color-on-surface-variant-2-dark
-    );
-    @include shape-extra-large;
-    display: none;
-    align-items: center;
-    justify-content: center;
-    width: 48px;
+  .nav-theme-toggle {
+    margin-top: auto;
     height: 48px;
-    margin-bottom: 8px;
-    margin-left: 4px;
-    color: $md-sys-color-on-surface-variant-dark;
-    cursor: pointer;
-  }
-  input {
-    display: none;
+    width: 48px;
+    padding-right: 10px;
+    user-select: none;
+    margin-left: auto;
+    margin-right: auto;
+    p {
+      display: none;
+      line-height: normal;
+      margin-bottom: 0;
+    }
+    &:hover {
+      .material-symbols-rounded {
+        background: var(--md-sys-color-on-surface-variant-2);
+      }
+    }
+    .material-symbols-rounded {
+      @include outline;
+      @include shape-extra-large;
+      height: 48px;
+      width: 48px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 24px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
   }
   @media (max-width: $defualt-width) {
-    @include elevation1($md-sys-color-surface-dark);
+    @include elevation1(var(--md-sys-color-surface));
     transform: translateX(-1000rem);
     width: 300px;
-    height: 100%;
     display: flex;
     flex-direction: column;
     padding: 13px;
     border-start-end-radius: 20px;
     border-end-end-radius: 20px;
     overflow: auto;
+
+    label {
+      display: flex;
+    }
     .nav-links-container {
       .nav-links {
         @include shape-extra-large;
         @include link(
-          $md-sys-color-on-surface-variant-dark,
-          $md-sys-color-on-surface-dark,
-          $md-sys-color-on-surface-variant-2-dark
+          var(--md-sys-color-on-surface-variant),
+          var(--md-sys-color-on-surface),
+          var(--md-sys-color-on-surface-variant-2)
         );
         @include label-large;
         display: flex;
@@ -146,33 +184,72 @@
         //Btn
         &:first-child {
           @include label-large;
-          @include elevation1($md-sys-color-primary-container-dark);
-          color: $md-sys-color-on-primary-container-dark;
+          @include elevation1(var(--md-sys-color-primary-container));
+          color: var(--md-sys-color-on-primary-container);
           line-height: 55px;
           border-radius: 100px;
           .material-symbols-rounded {
             background: none;
           }
           &:hover {
-            @include elevation5($md-sys-color-primary-container-dark);
-          }
-          &:hover {
             @include shape-small;
+            @include elevation5(var(--md-sys-color-primary-container));
             .material-symbols-rounded {
-              background: none;
+              background: inherit;
             }
           }
         }
       }
-      .active {
-        @include elevation2($md-sys-color-surface-dark);
+      .nav-links-active {
+        .material-symbols-rounded {
+          background: none;
+          &::before {
+            background: none;
+          }
+        }
+        background: var(--md-sys-color-on-surface-variant-2);
         &:hover {
-          @include elevation4($md-sys-color-surface-dark);
+          background: var(--md-sys-color-on-surface-variant-4);
+          .material-symbols-rounded {
+            background: none;
+          }
         }
       }
     }
-    label {
-      display: flex;
+
+    .nav-theme-toggle {
+      @include outline;
+      @include shape-extra-large;
+      display: block;
+      width: auto;
+      margin-left: auto;
+      margin-right: auto;
+      padding: 12px 12px 1px 12px;
+      height: 27px;
+      padding-bottom: 12px;
+      .toggle {
+        display: flex;
+        align-items: center;
+      }
+      p {
+        display: block;
+        line-height: normal;
+        margin-bottom: 0;
+      }
+      .material-symbols-rounded {
+        height: auto;
+        width: auto;
+        border: 0px;
+        border-radius: 0px;
+        display: block;
+        margin-right: 8px;
+      }
+      &:hover {
+        .material-symbols-rounded {
+          background: inherit;
+        }
+        background: var(--md-sys-color-on-surface-variant-2);
+      }
     }
   }
 }
@@ -181,13 +258,34 @@
   display: none;
   flex-direction: row;
   align-items: center;
-  padding: 8px 4px;
+  padding: 8px 15px;
   gap: 6px;
   height: 64px;
   width: 100%;
-  background: $md-sys-color-surface-dark;
+  background: var(--md-sys-color-surface);
   z-index: 3;
-
+  a,
+  label {
+    @include link(
+      var(--md-sys-color-on-surface),
+      inherit,
+      var(--md-sys-color-on-surface-variant-2)
+    );
+    @include shape-extra-large;
+    display: flex;
+    align-items: center;
+  }
+  #checkbtn {
+    display: none;
+  }
+  @media (max-width: $defualt-width) {
+    display: flex;
+  }
+  @media (max-width: $mobile-width) {
+    .title {
+      display: none;
+    }
+  }
   .title {
     @include title-large;
     margin: 0;
@@ -204,24 +302,6 @@
     margin: 0;
     width: 48px;
     height: 48px;
-  }
-  a,
-  label {
-    @include link($md-sys-color-on-surface-dark, inherit, $md-sys-color-on-surface-variant-2-dark);
-    @include shape-extra-large;
-    display: flex;
-    align-items: center;
-  }
-  #checkbtn {
-    display: none;
-  }
-  @media (max-width: $defualt-width) {
-    display: flex;
-  }
-  @media (max-width: $mobile-width) {
-    .title {
-      display: none;
-    }
   }
 }
 .site-banner {
@@ -257,10 +337,7 @@
   }
 }
 .site-animations-show {
-  @include remove-duration;
-  animation-duration: 0.5s;
-  animation-fill-mode: forwards;
-  animation-name: Drawer-Entrance;
+  transform: translateX(0rem);
 }
 .site-animations-hide {
   @include remove-duration;
@@ -296,16 +373,16 @@
 
   .site-post {
     @include shape-extra-large;
-    @include link(inherit, inherit, $md-sys-color-secondary-container-dark);
+    @include link(inherit, inherit, var(--md-sys-color-secondary-container));
     padding: 12px;
-    background: $md-sys-elevation-level1;
+    background: var(--md-sys-elevation-level1);
     box-shadow: 0px 2px 6px 2px rgba(0, 0, 0, 0.15), 0px 1px 2px rgba(0, 0, 0, 0.3);
     display: flex;
     flex-direction: column;
     gap: 12px;
     &:hover {
-      background-color: $md-sys-color-on-surface-dark;
-      background: $md-sys-color-on-surface-variant-2-dark;
+      background-color: var(--md-sys-color-on-surface);
+      background: var(--md-sys-color-on-surface-variant-2);
     }
 
     p {
@@ -346,7 +423,7 @@
   }
   .pin {
     @include outline;
-    background: $md-sys-color-surface-dark;
+    background: var(--md-sys-color-surface);
   }
   .posts-container {
     display: grid;
@@ -371,18 +448,19 @@
     @include btn;
     @include primary;
     &:hover {
-      background: $md-sys-color-on-surface-variant-2-dark;
-      background-color: $md-sys-color-on-primary-dark;
+      @include elevation5(var(--md-sys-color-primary));
+      @include shape-medium;
+      text-decoration: none;
     }
   }
   .disable {
-    color: $md-sys-color-on-surface;
-    background-color: $md-sys-color-on-surface-dark;
-    background: $md-sys-color-on-surface-variant-2-dark;
+    color: var(--md-sys-color-on-surface);
+    background-color: var(--md-sys-color-on-surface);
+    background: var(--md-sys-color-on-surface-variant-2);
     &:hover {
-      color: $md-sys-color-on-surface;
-      background-color: $md-sys-color-on-surface-dark;
-      background: $md-sys-color-on-surface-variant-2-dark;
+      color: var(--md-sys-color-on-surface);
+      background-color: var(--md-sys-color-on-surface);
+      background: var(--md-sys-color-on-surface-variant-2);
     }
   }
   @media (max-width: $mobile-width) {
@@ -427,7 +505,7 @@
     gap: 24px;
     padding-left: 12px;
     a {
-      color: $md-sys-color-on-surface-dark;
+      color: var(--md-sys-color-on-surface);
       &:hover {
         text-decoration: underline;
       }
@@ -443,7 +521,7 @@
       margin-left: auto;
       margin-right: 12px;
       padding: 12px;
-      background: $md-sys-elevation-level1;
+      background: var(--md-sys-elevation-level1);
       display: flex;
       gap: 10px;
 
@@ -453,7 +531,7 @@
         }
       }
       .material-symbols-rounded {
-        color: $md-sys-color-primary-dark;
+        color: var(--md-sys-color-primary);
       }
       p {
         margin: 0;
@@ -464,28 +542,33 @@
 }
 
 .post-header {
+  margin-bottom: 50px;
+  .post-info-date {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    user-select: none;
+  }
   .post-meta {
+    @include body-small;
     display: block;
   }
   .post-title {
     @include display-large;
     margin: 0;
+    font-size: 5.25rem;
+    line-height: 5.75rem;
   }
   .post-author {
+    @include body-large;
     margin-left: 12px;
   }
   .post-change-date {
-    @include outline;
-    @include shape-extra-large;
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    padding: 0px;
-    width: 190px;
-    height: 40px;
-    left: 40px;
-    top: 292px;
-    color: $md-sys-color-primary-dark;
+    color: var(--md-sys-color-primary);
   }
 }

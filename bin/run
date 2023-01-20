@@ -13,7 +13,7 @@ SCRIPT="bin/"$( basename "$0" )
 #
 # Current version
 #
-VERSION="0.2.2"
+VERSION="0.1.0"
 
 #
 # Colors
@@ -35,7 +35,7 @@ function usage
     echo -e ""
     echo -e ""
     echo -e "Subcommand:"
-    echo -e "  $YELLOW upgrade, u $NC       Upgrades $TEME to the latest version"
+    # echo -e "  $YELLOW upgrade, u $NC       Upgrades $THEME to the latest version"
     echo -e "  $YELLOW help, h  $NC         displays all the subcommand available and how to use it"
     echo -e "  $YELLOW version, v   $NC     show the version of the theme"
     echo -e "  $YELLOW server, s $NC        Runs the server locally"
@@ -46,14 +46,15 @@ function usage
 
 #
 # Upgrade the theme to the latest version
-#
-function Upgrade
-{
-    echo "Upgrading $THEME to $VERSION"
-    sed -i "s/gem 'jekyll-theme-fica', '~> 0.1.9'/gem 'jekyll-theme-fica', '~> 2.2.0'/gi" ./Gemfile
-    echo "Upgrade Complete!"
-    # insdep
-}
+# 
+# Not supported
+# function Upgrade
+# {
+#     echo "Upgrading $THEME to $VERSION"
+#     sed -i "s/gem 'jekyll-theme-unity', '~> 0.1.0'/gem 'jekyll-theme-unity', '~> 0.1.0'/gi" ./Gemfile
+#     echo "Upgrade Complete!"
+#     # insdep
+# }
 
 #
 # Runing the server locally

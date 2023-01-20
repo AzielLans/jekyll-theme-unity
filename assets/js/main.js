@@ -1,10 +1,16 @@
-const nav = document.querySelector("#nav");
+const nav_side_bar = document.querySelector("#nav-side-bar");
 const nav_scrim = document.querySelector("#nav-scrim");
 const active_page = window.location.pathname;
 const nav_links = document.querySelectorAll(".nav-links");
 const wrapper_body = document.querySelectorAll("#wrapper");
 const toc = document.querySelectorAll("#toc");
+const BackToTop = document.querySelector("#back-to-top");
+const body = document.querySelector("body");
+const modeToggle = document.querySelector(".nav-theme-toggle");
+const modeToggle_text = document.querySelector("#mode_text");
+const modeToggle_icon = document.querySelector("#nav-theme-toggle-icon");
 let value = window.innerWidth;
+let darkMode = localStorage.getItem("darkMode");
 
 document.querySelector("#checkbtn").onclick = function () {
   new Animation("site-animations-show", "site-animations-hide");
@@ -16,7 +22,7 @@ document.querySelector("#closebtn").onclick = function () {
   nav_scrim.style.display = "none";
   enableScroll();
   setTimeout(() => {
-    nav.classList.remove("site-animations-hide");
+    nav_side_bar.classList.remove("site-animations-hide");
   }, 60);
 };
 nav_scrim.onclick = function () {
@@ -24,13 +30,13 @@ nav_scrim.onclick = function () {
   nav_scrim.style.display = "none";
   enableScroll();
   setTimeout(() => {
-    nav.classList.remove("site-animations-hide");
+    nav_side_bar.classList.remove("site-animations-hide");
   }, 60);
 };
 class Animation {
   constructor(add, remove) {
-    nav.classList.remove(remove);
-    nav.classList.add(add);
+    nav_side_bar.classList.remove(remove);
+    nav_side_bar.classList.add(add);
   }
 }
 
@@ -50,14 +56,13 @@ function enableScroll() {
 }
 
 nav_links.forEach((link) => {
-    link.classList.remove("active");
+  link.classList.remove("nav-links-active");
   if (link.href.includes(`${active_page}`)) {
-    link.classList.add("active");
-  }
-  else {
+    link.classList.add("nav-links-active");
+  } else {
     if (window.location.pathname.includes("/Post/")) {
       if (link.href.includes("Post")) {
-        link.classList.add("active");
+        link.classList.add("nav-links-active");
       }
     }
   }
@@ -68,32 +73,107 @@ function checkvalue() {
     enableScroll();
   }
 }
-window.addEventListener('DOMContentLoaded', () => {
-
-  const observer = new IntersectionObserver(entries => {
+window.addEventListener("DOMContentLoaded", () => {
+  const observer = new IntersectionObserver((entries) => {
     if (document.querySelector("#toc")) {
-      entries.forEach(entry => {
-        const id = entry.target.getAttribute('id');
+      entries.forEach((entry) => {
+        const id = entry.target.getAttribute("id");
         if (entry.isIntersecting === true) {
-          document.querySelector(`main li a[href="#${id}"]`).parentElement.classList.add('active');
-          document.querySelector(`main li a[href="#${id}"]`).parentElement.classList.remove('decative');
-        } 
-        else {
-          document.querySelector(`main li a[href="#${id}"]`).parentElement.classList.remove('active');
-          document.querySelector(`main li a[href="#${id}"]`).parentElement.classList.add('decative');
+          document.querySelector(`main li a[href="#${id}"]`).parentElement.classList.add("active");
+          document
+            .querySelector(`main li a[href="#${id}"]`)
+            .parentElement.classList.remove("decative");
+        } else {
+          document
+            .querySelector(`main li a[href="#${id}"]`)
+            .parentElement.classList.remove("active");
+          document
+            .querySelector(`main li a[href="#${id}"]`)
+            .parentElement.classList.add("decative");
         }
       });
     }
   });
 
   // Track all sections that have an `id` applied
-  document.querySelectorAll('h1[id], h2[id], h3[id]').forEach((h1, h2, h3) => {
+  document.querySelectorAll("h1[id], h2[id], h3[id]").forEach((h1, h2, h3) => {
     observer.observe(h1, h2, h3);
   });
-  
 });
-// window.onload = add_animation();
 
-// function add_animation() {
-//   wrapper_body.classList.add("wrapper-animation");
-// }
+window.addEventListener("scroll", scrollFunction);
+
+function scrollFunction() {
+  if (document.querySelector("#back-to-top")) {
+    if (window.pageYOffset > 200) {
+      // Show BackToTop
+      if (!BackToTop.classList.contains("BTT-Entrance")) {
+        BackToTop.classList.remove("BTT-Exit");
+        BackToTop.classList.add("BTT-Entrance");
+        BackToTop.style.display = "flex";
+      }
+    } else {
+      // Hide BackToTop
+      if (BackToTop.classList.contains("BTT-Entrance")) {
+        BackToTop.classList.remove("BTT-Entrance");
+        BackToTop.classList.add("BTT-Exit");
+        setTimeout(function () {
+          BackToTop.style.display = "none";
+        }, 250);
+      }
+    }
+  }
+}
+if (document.querySelector("#back-to-top")) {
+  BackToTop.addEventListener("click", smoothScrollBackToTop);
+}
+
+function smoothScrollBackToTop() {
+  window.scrollTo(0, 0);
+}
+
+function easeInOutCubic(t, b, c, d) {
+  t /= d / 2;
+  if (t < 1) return (c / 2) * t * t * t + b;
+  t -= 2;
+  return (c / 2) * (t * t * t + 2) + b;
+}
+
+const enableDarkMode = () => {
+  // 1. Add the class to the body
+  document.body.classList.add("dark");
+  // 2. Update darkMode in localStorage
+  localStorage.setItem("darkMode", "enabled");
+  modeToggle_icon.textContent = "light_mode";
+  modeToggle_text.textContent = "Switch to light Mode";
+  modeToggle.classList.add("active");
+};
+
+const disableDarkMode = () => {
+  // 1. Remove the class from the body
+  document.body.classList.remove("dark");
+  modeToggle.classList.remove("active");
+  modeToggle_icon.textContent = "dark_mode";
+  modeToggle_text.textContent = "Switch to dark Mode";
+  // 2. Update darkMode in localStorage
+  localStorage.setItem("darkMode", null);
+};
+
+// If the user already visited and enabled darkMode
+// start things off with it on
+if (darkMode === "enabled") {
+  enableDarkMode();
+}
+
+modeToggle.addEventListener("click", () => {
+  // get their darkMode setting
+  darkMode = localStorage.getItem("darkMode");
+
+  // if it not current enabled, enable it
+  if (darkMode !== "enabled") {
+    enableDarkMode();
+    // if it has been enabled, turn it off
+  } else {
+    disableDarkMode();
+  }
+});

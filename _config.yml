@@ -8,7 +8,7 @@ description:  Based on Material 3 design principles
 
 # Change the following value to '/PROJECT_NAME' ONLY IF your site type is GitHub Pages Project sites
 # and doesn't have a custom domain.
-baseurl: /jekyll-theme-unity
+baseurl: '/jekyll-theme-unity'
 # Change the value to 'https://GITHUB_USERNAME.github.io/'
 url: 'https://involts.github.io/' 
 
@@ -30,13 +30,13 @@ header:
   header_3_icon: info
   header_3_link: /About/
 
-  header_home_link: /home/
+  header_home_link: /home
 
 footer:
 #  Section 1
  footer_section_1_title: jekyll-theme-unity
  footer_section_1_links_1_name: Download
- footer_section_1_links_1_link: / 
+ footer_section_1_links_1_link: /home
 
  footer_section_1_links_2_name: Post
  footer_section_1_links_2_link: /Posts/
@@ -47,24 +47,24 @@ footer:
 #  Section 2
  footer_section_2_title: You're Site
  footer_section_2_links_1_name: Lorem
- footer_section_2_links_1_link: / 
+ footer_section_2_links_1_link: /home
 
  footer_section_2_links_2_name: ispum
- footer_section_2_links_2_link: / 
+ footer_section_2_links_2_link: /home
 
  footer_section_2_links_3_name: dolor
- footer_section_2_links_3_link: / 
+ footer_section_2_links_3_link: /home 
 
 # Section 3
  footer_section_3_title: Customize
  footer_section_3_links_1_name: Lorem
- footer_section_3_links_1_link: / 
+ footer_section_3_links_1_link: /home
 
  footer_section_3_links_2_name: ispum
- footer_section_3_links_2_link: / 
+ footer_section_3_links_2_link: /home
 
  footer_section_3_links_3_name: dolor
- footer_section_3_links_3_link: / 
+ footer_section_3_links_3_link: /home
 #Paginate
 paginate: true
 paginate: 6

@@ -1,7 +1,7 @@
 
 //  Copyright 2016 Google Inc. All rights reserved.
 
-//  Licensed under the Apache License, Version 2.0 (the "License";
+//  Licensed under the Apache License, Version 2.0 (the "License");
 //  you may not use this file except in compliance with the License.
 //  You may obtain a copy of the License at
 
@@ -15,116 +15,116 @@
 
 
 @mixin primary {
-  color: $md-sys-color-on-primary;
-  background-color: $md-sys-color-primary;
+  color: var(--md-sys-color-on-primary);
+  background-color: var(--md-sys-color-primary);
 }
 @mixin on-primary {
-  color: $md-sys-color-primary;
-  background-color: $md-sys-color-on-primary;
+  color: var(--md-sys-color-primary);
+  background-color: var(--md-sys-color-on-primary);
 }
 @mixin primary-container {
-  color: $md-sys-color-on-primary-container;
-  background-color: $md-sys-color-primary-container;
+  color: var(--md-sys-color-on-primary-container);
+  background-color: var(--md-sys-color-primary-container);
 }
 @mixin on-primary-container {
-  color: $md-sys-color-primary-container;
-  background-color: $md-sys-color-on-primary-container;
+  color: var(--md-sys-color-primary-container);
+  background-color: var(--md-sys-color-on-primary-container);
 }
 @mixin secondary {
-  color: $md-sys-color-on-secondary;
-  background-color: $md-sys-color-secondary;
+  color: var(--md-sys-color-on-secondary);
+  background-color: var(--md-sys-color-secondary);
 }
 @mixin on-secondary {
-  color: $md-sys-color-secondary;
-  background-color: $md-sys-color-on-secondary;
+  color: var(--md-sys-color-secondary);
+  background-color: var(--md-sys-color-on-secondary);
 }
 @mixin secondary-container {
-  color: $md-sys-color-on-secondary-container;
-  background-color: $md-sys-color-secondary-container;
+  color: var(--md-sys-color-on-secondary-container);
+  background-color: var(--md-sys-color-secondary-container);
 }
 @mixin on-secondary-container {
-  color: $md-sys-color-secondary-container;
-  background-color: $md-sys-color-on-secondary-container;
+  color: var(--md-sys-color-secondary-container);
+  background-color: var(--md-sys-color-on-secondary-container);
 }
 @mixin tertiary {
-  color: $md-sys-color-on-tertiary;
-  background-color: $md-sys-color-tertiary;
+  color: var(--md-sys-color-on-tertiary);
+  background-color: var(--md-sys-color-tertiary);
 }
 @mixin on-tertiary {
-  color: $md-sys-color-tertiary;
-  background-color: $md-sys-color-on-tertiary;
+  color: var(--md-sys-color-tertiary);
+  background-color: var(--md-sys-color-on-tertiary);
 }
 @mixin tertiary-container {
-  color: $md-sys-color-on-tertiary-container;
-  background-color: $md-sys-color-tertiary-container;
+  color: var(--md-sys-color-on-tertiary-container);
+  background-color: var(--md-sys-color-tertiary-container);
 }
 @mixin on-tertiary-container {
-  color: $md-sys-color-tertiary-container;
-  background-color: $md-sys-color-on-tertiary-container;
+  color: var(--md-sys-color-tertiary-container);
+  background-color: var(--md-sys-color-on-tertiary-container);
 }
 @mixin background {
-  color: $md-sys-color-on-background;
-  background-color: $md-sys-color-background;
+  color: var(--md-sys-color-on-background);
+  background-color: var(--md-sys-color-background);
 }
 @mixin surface {
-  color: $md-sys-color-on-surface;
-  background-color: $md-sys-color-surface;
+  color: var(--md-sys-color-on-surface);
+  background-color: var(--md-sys-color-surface);
 }
 @mixin surface-variant {
-  color: $md-sys-color-on-surface-variant;
-  background-color: $md-sys-color-surface-variant;
+  color: var(--md-sys-color-on-surface-variant);
+  background-color: var(--md-sys-color-surface-variant);
 }
 @mixin on-surface-variant {
-  color: $md-sys-color-surface-variant;
-  background-color: $md-sys-color-on-surface-variant;
+  color: var(--md-sys-color-surface-variant);
+  background-color: var(--md-sys-color-on-surface-variant);
 }
 @mixin outline {
-  border: 1px solid $md-sys-color-outline;
+  border: 1px solid var(--md-sys-color-outline);
 }
 @mixin inverse-surface {
-  color: $md-sys-color-on-inverse-surface;
-  background-color: $md-sys-color-inverse-surface;
+  color: var(--md-sys-color-on-inverse-surface);
+  background-color: var(--md-sys-color-inverse-surface);
 }
 @mixin on-inverse-surface {
-  color: $md-sys-color-inverse-surface;
-  background-color: $md-sys-color-on-inverse-surface;
+  color: var(--md-sys-color-inverse-surface);
+  background-color: var(--md-sys-color-on-inverse-surface);
 }
 @mixin inverse-primary {
-  color: $md-sys-color-on-inverse-primary;
-  background-color: $md-sys-color-inverse-primary;
+  color: var(--md-sys-color-on-inverse-primary);
+  background-color: var(--md-sys-color-inverse-primary);
 }
 @mixin on-inverse-primary {
-  color: $md-sys-color-inverse-primary;
-  background-color: $md-sys-color-on-inverse-primary;
+  color: var(--md-sys-color-inverse-primary);
+  background-color: var(--md-sys-color-on-inverse-primary);
 }
 @mixin surface-tint {
-  background-color: $md-sys-color-on-surface-tint;
+  background-color: var(--md-sys-color-on-surface-tint);
 }
 @mixin error {
-  color: $md-sys-color-on-error;
-  background-color: $md-sys-color-error;
+  color: var(--md-sys-color-on-error);
+  background-color: var(--md-sys-color-error);
 }
 @mixin on-error {
-  color: $md-sys-color-error;
-  background-color: $md-sys-color-on-error;
+  color: var(--md-sys-color-error);
+  background-color: var(--md-sys-color-on-error);
 }
 @mixin error-container {
-  color: $md-sys-color-on-error-container;
-  background-color: $md-sys-color-error-container;
+  color: var(--md-sys-color-on-error-container);
+  background-color: var(--md-sys-color-error-container);
 }
 @mixin on-error-container {
-  color: $md-sys-color-error-container;
-  background-color: $md-sys-color-on-error-container;
+  color: var(--md-sys-color-error-container);
+  background-color: var(--md-sys-color-on-error-container);
 }
 @mixin black {
-  background-color: $md-ref-palette-black;
+  background-color: var(--md-ref-palette-black);
 }
 @mixin black-text {
-  color: $md-ref-palette-black;
+  color: var(--md-ref-palette-black);
 }
 @mixin white {
-  background-color: $md-ref-palette-white;
+  background-color: var(--md-ref-palette-white);
 }
 @mixin white-text {
-  color: $md-ref-palette-white;
+  color: var(--md-ref-palette-white);
 }

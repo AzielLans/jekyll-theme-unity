@@ -29,6 +29,27 @@ $defualt-width: 1000px !default;
   border-radius: 100px;
 }
 
+@mixin prompt($bg-color, $color, $icon, $icon-color, $icon-font-family) {
+  @include shape-large;
+  background-color: $bg-color;
+  color: $color;
+  padding: 0.8rem 1.2rem;
+  &::before {
+    content: $icon;
+    font-family: $icon-font-family;
+    color: $color;
+    font-size: 34px;
+    line-height: 1;
+    padding-right: 10px;
+    padding-bottom: 13px;
+  font-variation-settings:
+  'FILL' 1,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 48
+  }
+}
+
 @mixin horizontal-scroll {
     &::-webkit-scrollbar {
       height: 16px;
@@ -51,7 +72,7 @@ $defualt-width: 1000px !default;
         background-clip: padding-box;
       }
     }
-  }
+}
 
 @mixin elevation1($bg-color) {
   background: linear-gradient(0deg, rgba(208, 188, 255, 0.05), rgba(208, 188, 255, 0.05)), $bg-color;
@@ -96,6 +117,14 @@ $defualt-width: 1000px !default;
   }
   to {
     opacity: 1;
+  }
+}
+@keyframes opacityrestore {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
   }
 }
 @keyframes activeanimation {
