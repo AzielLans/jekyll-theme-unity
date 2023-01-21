@@ -113,7 +113,7 @@ function chktheme
 function gm_bld
 {
     echo Building gemspec.....
-    gem build jekyll-theme-fica.gemspec
+    gem build jekyll-theme-unity.gemspec
     echo Build complete
     
     while true; do
