@@ -23,7 +23,7 @@ header:
   header_1_link: 
 
   header_2_name: Post
-  header_2_icon: list
+  header_2_icon: format_list_bulleted
   header_2_link: /Posts/
 
   header_3_name: About
@@ -81,6 +81,11 @@ plugins:
 whitelist:
   - jekyll-redirect-from
 
+google_analytics: 
+  enabled: true # if false, it disables Google Analytics
+  id:           # fill in your Google Analytics ID    
+
+show-footer-copyright: true
  
 collections:
   tabs:

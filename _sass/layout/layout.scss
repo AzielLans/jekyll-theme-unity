@@ -52,7 +52,7 @@
       padding-left: 0;
       padding-top: 5px;
       padding-bottom: 5px;
-      .material-symbols-rounded {
+      span{
         display: flex;
         position: relative;
         align-items: center;
@@ -71,14 +71,14 @@
       }
       &:hover {
         color: var(--md-sys-color-on-surface);
-        .material-symbols-rounded {
+        span{
           background: var(--md-sys-color-on-surface-variant-2);
         }
       }
       &:first-child {
         @include label-medium;
         color: var(--md-sys-color-on-surface-variant);
-        .material-symbols-rounded {
+        span{
           @include elevation1(var(--md-sys-color-primary-container));
           color: var(--md-sys-color-on-primary-container);
           &:hover {
@@ -88,7 +88,7 @@
       }
     }
     .nav-links-active {
-      .material-symbols-rounded {
+      span{
         &::before {
           content: "";
           position: absolute;
@@ -119,11 +119,11 @@
       margin-bottom: 0;
     }
     &:hover {
-      .material-symbols-rounded {
+      span{
         background: var(--md-sys-color-on-surface-variant-2);
       }
     }
-    .material-symbols-rounded {
+    span{
       @include outline;
       @include shape-extra-large;
       height: 48px;
@@ -168,7 +168,7 @@
         p {
           align-self: stretch;
         }
-        .material-symbols-rounded {
+        span{
           background: inherit;
           padding-left: 12px;
           margin: 0;
@@ -177,7 +177,7 @@
           width: auto;
         }
         &:hover {
-          .material-symbols-rounded {
+          span{
             background: none;
           }
         }
@@ -189,20 +189,20 @@
           color: var(--md-sys-color-on-primary-container);
           line-height: 55px;
           border-radius: 100px;
-          .material-symbols-rounded {
+          span{
             background: none;
           }
           &:hover {
             @include shape-small;
             @include elevation5(var(--md-sys-color-primary-container));
-            .material-symbols-rounded {
+            span{
               background: inherit;
             }
           }
         }
       }
       .nav-links-active {
-        .material-symbols-rounded {
+        span{
           background: none;
           &::before {
             background: none;
@@ -211,7 +211,7 @@
         background: var(--md-sys-color-on-surface-variant-2);
         &:hover {
           background: var(--md-sys-color-on-surface-variant-4);
-          .material-symbols-rounded {
+          span{
             background: none;
           }
         }
@@ -237,7 +237,7 @@
         line-height: normal;
         margin-bottom: 0;
       }
-      .material-symbols-rounded {
+      span{
         height: auto;
         width: auto;
         border: 0px;
@@ -246,7 +246,7 @@
         margin-right: 8px;
       }
       &:hover {
-        .material-symbols-rounded {
+        span{
           background: inherit;
         }
         background: var(--md-sys-color-on-surface-variant-2);
@@ -293,7 +293,7 @@
     width: 250px;
     height: 28px;
   }
-  .material-symbols-rounded {
+  span ,img {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -304,6 +304,10 @@
     width: 48px;
     height: 48px;
     user-select: none;
+  }
+  img {
+    width: 55px;
+    height: 48px;
   }
 }
 .site-banner {
@@ -417,7 +421,7 @@
         @include tertiary;
         @include shape-extra-large;
         padding: 8px 10px 3px 10px;
-        .material-symbols-rounded {
+        span{
           transform: rotate(45deg);
         }
       }
@@ -446,7 +450,7 @@
   padding: 31px 0px 31px 0px;
   margin: 0px;
   list-style: none;
-  .material-symbols-rounded {
+  span{
     @include btn;
     @include primary;
     &:hover {
@@ -532,7 +536,7 @@
           display: block;
         }
       }
-      .material-symbols-rounded {
+      span{
         color: var(--md-sys-color-primary);
       }
       p {

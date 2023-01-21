@@ -20,16 +20,18 @@
             <a href="{{site.footer.footer_section_3_links_3_link | relative_url }}">{{site.footer.footer_section_3_links_3_name}}</a>
           </div>
     </div>
-    <section class="legal">
-        <a href="https://github.com/involts">Inovlts</a>
-        <a href="https://github.com/Involts?tab=repositories">Repositories</a>
-        <a href="https://rubygems.org/profiles/Involts">RubyGems</a>
-        <a href="https://github.com/Involts/jekyll-theme-unity/issues">Bugs</a>
-        <div class="theme-title">
-          <span class="material-symbols-rounded">
-            area_chart
-            </span>
-            <p>Jekyll Theme Unity</p>
-        </div>
-    </section>
+    {%- if site.show-footer-copyright -%}
+          <section class="legal">
+              <a href="https://github.com/involts">Inovlts</a>
+              <a href="https://github.com/Involts?tab=repositories">Repositories</a>
+              <a href="https://rubygems.org/profiles/Involts">RubyGems</a>
+              <a href="https://github.com/Involts/jekyll-theme-unity/issues">Bugs</a>
+              <div class="theme-title">
+                <span class="material-symbols-rounded">
+                  area_chart
+                  </span>
+                  <p>Jekyll Theme Unity</p>
+              </div>
+          </section>
+    {%- endif -%}
 </footer>
