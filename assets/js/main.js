@@ -12,12 +12,12 @@ const modeToggle_icon = document.querySelector("#nav-theme-toggle-icon");
 let value = window.innerWidth;
 let darkMode = localStorage.getItem("darkMode");
 
-document.querySelector("#checkbtn").onclick = function () {
+document.querySelector("#top-bar-checkbtn").onclick = function () {
   new Animation("site-animations-show", "site-animations-hide");
   nav_scrim.style.display = "block";
   disableScroll();
 };
-document.querySelector("#closebtn").onclick = function () {
+document.querySelector("#nav-side-bar-closebtn").onclick = function () {
   new Animation("site-animations-hide", "site-animations-show");
   nav_scrim.style.display = "none";
   enableScroll();
