@@ -70,6 +70,8 @@
 
   --md-sys-color-on-surface-variant-2: linear-gradient(0deg,rgba(68,71,70,.15),rgba(68,71,70,.15)), var(--md-sys-color-surface);
   --md-sys-color-on-surface-variant-4: linear-gradient(0deg,rgba(68,71,70,.18),rgba(68,71,70,.18)), var(--md-sys-color-surface);
+
+  @import "highlight-light.scss";
 }
 
 body.dark {
@@ -145,6 +147,8 @@ body.dark {
 
   --md-sys-color-on-surface-variant-2: linear-gradient(0deg,rgba(68,71,70,.15),rgba(68,71,70,.15));
   --md-sys-color-on-surface-variant-4: linear-gradient(0deg,rgba(68,71,70,.18),rgba(68,71,70,.18));
+
+  @import "highlight-dark.scss";
 }
 $md-sys-color-on-surface-2: linear-gradient(0deg,hsla(0, 0%, 89%, 0.08),hsla(0,0%,89%,.08)), var(--md-sys-color-secondary-container);
 $md-sys-color-on-surface-4: linear-gradient(0deg,hsla(0,0%,89%,.12),hsla(0,0%,89%,.12)), var(--md-sys-color-secondary-container);

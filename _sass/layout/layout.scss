@@ -123,7 +123,7 @@
         background: var(--md-sys-color-on-surface-variant-2);
       }
     }
-    span{
+    span {
       @include outline;
       @include shape-extra-large;
       height: 48px;
@@ -329,6 +329,7 @@
       @include title-large;
       width: 195px;
       height: 82px;
+      padding: 0px;
     }
 
     @media (max-width: $defualt-width) {
@@ -450,7 +451,7 @@
   padding: 31px 0px 31px 0px;
   margin: 0px;
   list-style: none;
-  span{
+  a {
     @include btn;
     @include primary;
     &:hover {

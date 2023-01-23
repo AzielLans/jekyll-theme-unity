@@ -158,6 +158,22 @@ ol {
   margin-left: 20px;
 }
 
+button {
+  @include label-large;
+  @include btn;
+  border: 0px;
+  background: var(--md-sys-color-primary);
+  color: var(--md-sys-color-on-primary);
+  p {
+    margin: 0px;
+  }  
+  &:hover {
+    @include elevation5(var(--md-sys-color-primary));
+    @include shape-medium;
+    color: initial;
+  }
+}
+
 .rouge-table {
   width: 0%;
   border: 0px;
@@ -169,6 +185,22 @@ ol {
   .rouge-gutter {
     padding: 0px;
     border: 0px;
+  }
+}
+.code-header {
+  display: flex;
+  justify-content: flex-end;
+  user-select: none;
+  cursor: pointer;
+  span {
+    @include link(
+      var(--md-sys-color-on-surface),
+      inherit,
+      var(--md-sys-color-on-surface-variant-2)
+    );
+    @include shape-extra-large;
+    transition: all 0.3s ease;
+    padding: 16px;
   }
 }
 .highlight {
@@ -290,7 +322,7 @@ ol {
   }
 
 }
-span{
+span {
   font-size: 24px;
 }
 .btn {
@@ -385,6 +417,7 @@ span{
   box-shadow: 0px 4px 8px 3px rgba(0, 0, 0, 0.15), 0px 1px 3px rgba(0, 0, 0, 0.3);
   user-select: none;
   &:hover {
+    @include elevation5(var(--md-sys-color-tertiary));
     box-shadow: 0px 6px 10px 4px rgba(0, 0, 0, 0.15), 0px 2px 3px rgba(0, 0, 0, 0.3);
   }
 }
@@ -415,5 +448,22 @@ span{
 .prompt-danger {
   @include prompt(var(--md-sys-color-danger), var(--md-sys-color-on-danger) ,"dangerous", var(--md-sys-color-on-danger), "Material Symbols Rounded" );
 }
+
+.video-container {
+  position: relative;
+  padding-bottom: 56.25%;
+  margin-top: 36px;
+  margin-bottom: 36px;
+}
+
+.video-container iframe {
+  @include shape-medium;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
 
 

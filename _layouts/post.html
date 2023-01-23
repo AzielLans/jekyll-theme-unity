@@ -37,7 +37,7 @@
           <span itemprop="name">{{ author }}</span>
         </div>
       </header>
-      {{ content }}
+      {% include assets/anchor-headings.html html=content anchorBody="#" %}
     </div>
     <div class="post-toc" id="toc">
       {% include assets/toc.html html=content h_min=1 h_max=3 %}

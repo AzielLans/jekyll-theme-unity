@@ -3,9 +3,7 @@ layout: post
 site-title: Getting Started
 author: Involts
 pin: true
-post_toc: true
 ---
-
 # Prerequisites
 
 Follow the instructions in [jekyll Docs](https://jekyllrb.com/docs/installation/) to install `Ruby`, `RubyGems`, and `Bundler`. You may also install [Git](https://git-scm.com/)
@@ -22,23 +20,26 @@ Follow the instructions in [jekyll Docs](https://jekyllrb.com/docs/installation/
 
 Copy the Gemfile `gem 'jekyll-theme-fica', '~> 0.2.0'`, paste it on the `Gemfile` file then run 
 
+{% include assets/code-header.html %}
 ```bash
 $ bin/run insdep
 ```
 {: .nolineno}
 or
+{% include assets/code-header.html %}
 ```bash
 $ bundle install
 ```
 {: .nolineno}
 
 and run
-
+{% include assets/code-header.html %}
 ```bash
 $ bin/run server
 ```
 {: .nolineno}
 or
+{% include assets/code-header.html %}
 ```bash
 $ bundle exec jekyll serve
 ```
@@ -52,14 +53,14 @@ $ bundle exec jekyll serve
 name it `<GH_USERNAME>.github.io`, where `GH_USERNAME` represents your GitHub username.
 
  then run:
-
+{% include assets/code-header.html %}
 ```bash
 $ bin/run insdep
 ```
 {: .nolineno}
 
 and run
-
+{% include assets/code-header.html %}
 ```bash
 $ bin/run server
 ```
@@ -75,6 +76,7 @@ $ bin/run server
 
 Fica Theme will respect the following variables, in your `_config.yml` file:
 
+{% include assets/code-header.html %}
 ```yml
 title: [The title of your site]
 description: [A short description of your site's purpose]
@@ -87,7 +89,7 @@ socials:
 ```
 
 Change the links of your site header:
-
+{% include assets/code-header.html %}
 ```yml
 header:
     external_link_1: true # if false, it adds the baseurl of the site
@@ -108,7 +110,7 @@ Change the links of your site header:
  > If you want to create a external link in the headers Links remove `{{site.baseurl}}` on `_includes/Header/html` **BELLOW**
  {: .prompt-info }
 
-
+{% include assets/code-header.html %}
 {% raw %}
 ```diff
 header:
@@ -141,6 +143,7 @@ Please refer to the [Upgrade Guide](https://github.com/Involts/jekyll-theme-fica
 
 - If you [forked](https://github.com/Involts/jekyll-theme-fica/fork) it on [GitHub](https://github.com/Involts/jekyll-theme-fica), then merge the [latest tags](https://github.com/Involts/jekyll-theme-fica/tags) into your Jekyll site to complete the upgrade. The merge is likely to conflict with your local modifications. Please be patient and careful to resolve these conflicts.
 
+{% include assets/youtube-embed.html id='h8XxdZxufmM' %}
 
 
 

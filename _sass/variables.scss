@@ -16,14 +16,14 @@ $defualt-width: 1000px !default;
     }
 }
 @mixin btn {
+  @include duration-550;
+  @include easing-standard;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 0px;
   gap: 8px;
-  width: 120px;
-  height: 40px;
+  padding: 12px 50px;
   left: 40px;
   top: 64px;
   border-radius: 100px;
