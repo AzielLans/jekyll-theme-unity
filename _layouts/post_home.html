@@ -58,7 +58,7 @@ layout: default
         </span>
       {%- endif -%}
       </div>
-      {%- if site.show_descriptions -%} {{ post.excerpt }} {%- endif -%}
+      {%- if site.show_post_descriptions -%} {{ post.excerpt }} {%- endif -%}
     </a>
     {% endif %} {%- endfor -%}
   </div>
@@ -77,7 +77,7 @@ layout: default
         </span>
         {%- endif -%}
       </div>
-      {%- if site.show_descriptions -%} {{ post.excerpt }} {%- endif -%}
+      {%- if site.show_post_descriptions -%} {{ post.excerpt }} {%- endif -%}
     </a>
     {% endunless %} {%- endfor -%}
   </div>

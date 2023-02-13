@@ -12,15 +12,20 @@ baseurl: '/jekyll-theme-unity'
 # Change the value to 'https://GITHUB_USERNAME.github.io/'
 url: 'https://involts.github.io/' 
 
-permalink: /Post/:title/
+# The author of the post
+post_author: Involts
 
-show_descriptions: true
+show_post_descriptions: true # if false, it disables Post descriptions
+
+google_analytics: 
+  enabled: true # if false, it disables Google Analytics
+  id:           # fill in your Google Analytics ID    
 
 # icons are from https://fonts.google.com/icons
 header:
   header_1_name: Download
   header_1_icon: file_download
-  header_1_link: 
+  header_1_link: https://github.com/Involts/jekyll-theme-unity/archive/refs/heads/master.zip
 
   header_2_name: Post
   header_2_icon: format_list_bulleted
@@ -29,6 +34,10 @@ header:
   header_3_name: About
   header_3_icon: info
   header_3_link: /About/
+
+  header_4_name: Question
+  header_4_icon: question_mark
+  header_4_link: /
 
   header_home_link: /home
 
@@ -65,7 +74,26 @@ footer:
 
  footer_section_3_links_3_name: dolor
  footer_section_3_links_3_link: /home
-#Paginate
+
+footer_copyright: 
+ show-footer-copyright: true # if false, it disables copyright in footer
+ show-theme-name: true  # if false, it disables theme name
+
+ footer_copyright_1_name: Involts
+ footer_copyright_1_link: https://github.com/involts
+
+ footer_copyright_2_name: Repositories
+ footer_copyright_2_link: https://github.com/Involts?tab=repositories
+
+ footer_copyright_3_name: RubyGems
+ footer_copyright_3_link: https://rubygems.org/profiles/Involts
+
+ footer_copyright_4_name: Bugs
+ footer_copyright_4_link: https://github.com/Involts/jekyll-theme-unity/issues/new
+
+permalink: /Post/:title/
+
+# Paginate
 paginate: true
 paginate: 6
 paginate_path: "/Posts/page:num/"
@@ -81,21 +109,11 @@ plugins:
 whitelist:
   - jekyll-redirect-from
 
-google_analytics: 
-  enabled: true # if false, it disables Google Analytics
-  id:           # fill in your Google Analytics ID    
 
-show-footer-copyright: true
- 
-collections:
-  tabs:
-    output: true
-    sort_by: order
 
 exclude:
   - "*.gem"
   - "*.gemspec"
-  - bin
   - README.md
   - LICENSE
   - docs

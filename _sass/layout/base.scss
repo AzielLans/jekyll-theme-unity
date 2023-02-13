@@ -48,6 +48,19 @@ p {
 
 h1, h2, h3, h4, h5, h6 {
   line-height: 3rem;
+  a {
+    @include shape-extra-large;
+    opacity: 0;
+    color: var(--md-sys-color-on-surface);
+    padding: 5px;
+    background: var(--md-sys-color-on-surface-variant-2);
+  }
+  &:hover {
+    a {
+      text-decoration: none;
+      opacity: 1;
+    }
+  }
 }
 
 h1 {
@@ -136,6 +149,12 @@ div {
     pre.lineno {
       display: none;
     }
+    .code-header  {
+      span {
+        padding: 0px;
+      }
+      
+    }
 
     td.rouge-code {
       padding: 8px 12px;
@@ -188,6 +207,11 @@ button {
   }
 }
 .code-header {
+  // width: 100%;
+  position: absolute;
+  left: initial;
+  right: 20px;
+  top: 10px;
   display: flex;
   justify-content: flex-end;
   user-select: none;
@@ -206,6 +230,8 @@ button {
 .highlight {
   @include shape-medium;
   margin-bottom: 15px;
+  position: relative;
+  // display: block;
   // To preventing bordering all pre element
   > pre {
     border: 1px solid var(--md-sys-color-outline);
@@ -234,6 +260,7 @@ button {
     min-width: 20px;
     text-align: right;
     color: $md-ref-palette-neutral-50;
+    // TODO: add mixin select none
     -webkit-user-select: none;
     -khtml-user-select: none;
     -moz-user-select: none;
@@ -310,6 +337,7 @@ button {
       width: 195px;
       height: 82px;
       margin-top: 15px;
+      padding: 0px;
     }
   }
   .svgcontainer {

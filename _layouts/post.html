@@ -33,11 +33,12 @@
 
         <h1 class="post-title">{{ page.title | escape }}</h1>
         <div class="post-author post-meta">
-          {% if page.author %} {% assign author = page.author %} {% endif %}
+          {% if site.post_author %} {% assign author = site.post_author %} {% endif %} {% if
+            page.author %} {% assign author = page.author %} {% endif %} 
           <span itemprop="name">{{ author }}</span>
         </div>
       </header>
-      {% include assets/anchor-headings.html html=content anchorBody="#" %}
+      {% include assets/anchor-headings.html html=content anchorBody="link" anchorClass="material-symbols-rounded"   %}
     </div>
     <div class="post-toc" id="toc">
       {% include assets/toc.html html=content h_min=1 h_max=3 %}

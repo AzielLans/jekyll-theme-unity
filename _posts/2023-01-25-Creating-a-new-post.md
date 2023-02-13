@@ -1,10 +1,9 @@
 ---
 layout: post
 site-title: Creating a new post
-author: Involts
 ---
 
-This post shows how to create a new post on the `Fica` Theme. Even if you have previous experience with Jekyll, this article is worth reading, because many features require specific variables to be set.
+This post shows how to create a new post on the `Unity` Theme. Even if you have previous experience with Jekyll, this article is worth reading, because many features require specific variables to be set.
 
 # Creating a File and Naming a post
 
@@ -16,7 +15,7 @@ Basic Font Matter
 
 |             Font Matter               |  Description
 | --------------------------------------|------------------
-| `layouts`                             |  This specifies the layout file to use. It may be `home` layout for the homepage, `post` layout for post, `default` or `page` layout/s the original look of the site, and `post-home` layout for homepage of the post/s. 
+| `layout`                             |  This specifies the layout file to use. It may be `home` layout for the homepage, `post` layout for post, `default` or `page` layout/s the original look of the site, and `post-home` layout for homepage of the post/s. 
 | `site-title`                          | This displays the website title. **EXCEPT THE HOMEPAGE**
 | `author`                              |  This is optional for the post because the authour is set on the `_config.yml` file.
 | `home`                                | **This is only for the homepage** It displays the website title so that you will not write the website title.

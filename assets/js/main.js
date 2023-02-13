@@ -9,8 +9,9 @@ const body = document.querySelector("body");
 const modeToggle = document.querySelector(".nav-theme-toggle");
 const modeToggle_text = document.querySelector("#mode_text");
 const modeToggle_icon = document.querySelector("#nav-theme-toggle-icon");
-const codeBlocks = document.querySelectorAll(".code-header + .highlighter-rouge");
+const codeBlocks = document.querySelectorAll("td.rouge-code ");
 const copyCodeButtons = document.querySelectorAll("#code-copy-btn");
+let codetable = document.querySelectorAll("table.rouge-table");
 let value = window.innerWidth;
 let darkMode = localStorage.getItem("darkMode");
 
@@ -180,20 +181,48 @@ modeToggle.addEventListener("click", () => {
   }
 });
 
-copyCodeButtons.forEach((copyCodeButton, index) => {
-  const code = codeBlocks[index].innerText;
+// copyCodeButtons.forEach((copyCodeButton, index) => {
+//   const code = codeBlocks[index].innerText;
 
-  copyCodeButton.addEventListener("click", () => {
-    // Copy the code to the user's clipboard
+//   copyCodeButton.addEventListener("click", () => {
+//     // Copy the code to the user's clipboard
+//     window.navigator.clipboard.writeText(code);
+
+//     // Update the button text visually
+//     const { innerText: originalText } = copyCodeButton;
+//     copyCodeButton.innerText = "content_paste";
+
+//     // After 2 seconds, reset the button to its initial UI
+//     setTimeout(() => {
+//       copyCodeButton.innerText = originalText;
+//     }, 2000);
+//   });
+// });
+
+codeBlocks.forEach(function (codeBlock) {
+  var copyButton = document.createElement('div');
+  copyButton.className = 'code-header';
+  copyButton.ariaLabel = 'Copy code to clipboard';
+  copyButton.id = 'code-header';
+
+  var copyButton_link = document.createElement('span');
+  copyButton_link.className = 'material-symbols-rounded';
+  copyButton_link.innerText = 'content_copy';
+
+  copyButton.append(copyButton_link);
+
+  codeBlock.append(copyButton);
+
+  copyButton.addEventListener('click', function () {
+    let wordToRemove = "$"; 
+    var code = codeBlock.querySelector('pre').innerText.replace(wordToRemove, '');
     window.navigator.clipboard.writeText(code);
 
-    // Update the button text visually
-    const { innerText: originalText } = copyCodeButton;
-    copyCodeButton.innerText = "content_paste";
+    copyButton_link.innerText = 'content_paste';
+    var fourSeconds = 4000;
 
-    // After 2 seconds, reset the button to its initial UI
-    setTimeout(() => {
-      copyCodeButton.innerText = originalText;
-    }, 2000);
+    setTimeout(function () {
+      copyButton_link.innerText = 'content_copy';
+    }, fourSeconds);
   });
 });

@@ -20,18 +20,20 @@
             <a href="{{site.footer.footer_section_3_links_3_link | relative_url }}">{{site.footer.footer_section_3_links_3_name}}</a>
           </div>
     </div>
-    {%- if site.show-footer-copyright -%}
+    {%- if site.footer_copyright.show-footer-copyright -%}
           <section class="legal">
-              <a href="https://github.com/involts">Inovlts</a>
-              <a href="https://github.com/Involts?tab=repositories">Repositories</a>
-              <a href="https://rubygems.org/profiles/Involts">RubyGems</a>
-              <a href="https://github.com/Involts/jekyll-theme-unity/issues">Bugs</a>
-              <div class="theme-title">
-                <span class="material-symbols-rounded">
-                  area_chart
-                  </span>
-                  <p>Jekyll Theme Unity</p>
-              </div>
+              <a href="{{site.footer_copyright.footer_copyright_1_link | relative_url }}">{{site.footer_copyright.footer_copyright_1_name}}</a>
+              <a href="{{site.footer_copyright.footer_copyright_2_link | relative_url }}">{{site.footer_copyright.footer_copyright_2_name}}</a>
+              <a href="{{site.footer_copyright.footer_copyright_3_link | relative_url }}">{{site.footer_copyright.footer_copyright_3_name}}</a>
+              <a href="{{site.footer_copyright.footer_copyright_4_link | relative_url }}">{{site.footer_copyright.footer_copyright_4_name}}</a>
+              {%- if site.footer_copyright.show-footer-copyright -%}
+                  <div class="theme-title">
+                    <span class="material-symbols-rounded">
+                      area_chart
+                      </span>
+                      <p>Jekyll Theme Unity</p>
+                  </div>
+              {%- endif -%}
           </section>
     {%- endif -%}
 </footer>
