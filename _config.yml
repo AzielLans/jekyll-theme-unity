@@ -33,7 +33,7 @@ header:
 
   header_3_name: About
   header_3_icon: info
-  header_3_link: /About/
+  header_3_link: /About
 
   header_4_name: Question
   header_4_icon: question_mark
@@ -51,7 +51,7 @@ footer:
  footer_section_1_links_2_link: /Posts/
 
  footer_section_1_links_3_name: About
- footer_section_1_links_3_link: /About/
+ footer_section_1_links_3_link: /About
 
 #  Section 2
  footer_section_2_title: You're Site

@@ -169,8 +169,6 @@ Please refer to the [Upgrade Guide](https://github.com/Involts/jekyll-theme-unit
 
 - If you [forked](https://github.com/Involts/jekyll-theme-unity/fork) it on [GitHub](https://github.com/Involts/jekyll-theme-unity), then merge the [latest tags](https://github.com/Involts/jekyll-theme-unity/tags) into your Jekyll site to complete the upgrade. The merge is likely to conflict with your local modifications. Please be patient and careful to resolve these conflicts.
 
-{% include assets/youtube-embed.html id='h8XxdZxufmM' %}
-
 
 
 
