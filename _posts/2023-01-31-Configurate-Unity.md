@@ -93,7 +93,33 @@ header:
 
 ```
 # Change the favicon
-change the `favicon.ico` file.
+
+## Generate the favicon
+
+Prepare a square image (PNG, JPG, or SVG) with a size of 512x512 or more, and then go to the online tool [**Real Favicon Generator**](https://realfavicongenerator.net/) and click the button <kbd>Select your Favicon image</kbd> to upload your image file.
+
+In the next step, the webpage will show all usage scenarios. You can keep the default options, scroll to the bottom of the page, and click the button <kbd>Generate your Favicons and HTML code</kbd> to generate the favicon.
+
+## Download & Replace
+
+Download the generated package, unzip and delete the following two from the extracted files:
+
+- `browserconfig.xml`
+- `site.webmanifest`
+
+And then copy the remaining image files (`.PNG` and `.ICO`) to cover the original files in the directory `assets/img/favicons/` of your Jekyll site. If your Jekyll site doesn't have this directory yet, just create one.
+
+The following table will help you understand the changes to the favicon files:
+
+| File(s)             | From Online Tool                  | From Chirpy |
+|---------------------|:---------------------------------:|:-----------:|
+| `*.PNG`             | ✓                                 | ✗           |
+| `*.ICO`             | ✓                                 | ✗           |
+
+>  ✓ means keep, ✗ means delete.
+{: .prompt-info }
+
+The next time you build the site, the favicon will be replaced with a customized edition.
 <!-- 
 # Add custom color schemes
 Go to [Material Theme Builder site](https://m3.material.io/theme-builder#)

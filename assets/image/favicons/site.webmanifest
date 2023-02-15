@@ -1,6 +1,4 @@
 {
-    "name": "{{site.title}",
-    "short_name": "{{site.title}",
     "icons": [
         {
             "src": "/android-chrome-192x192.png",
