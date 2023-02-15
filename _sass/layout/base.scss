@@ -192,6 +192,29 @@ button {
     color: initial;
   }
 }
+span {
+  &[style^="display: inline !important;"] {
+    &::before {
+      display: flex;
+      content: "warning";
+      font-family: "Material Symbols Rounded";
+      color: var(--md-sys-color-on-warning);
+      font-size: 34px;
+      line-height: 1;
+      padding-right: 10px;
+      padding-top: 13px;
+    }
+    display: block;
+    background-color: var(--md-sys-color-warning);
+    color: var(--md-sys-color-on-warning);
+    padding: 10px;
+    margin-left: 7rem;
+    @media (max-width: 1000px) {
+      margin-left: 0px;
+    }
+  }
+  
+}
 
 .rouge-table {
   width: 0%;
