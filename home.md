@@ -8,6 +8,8 @@ banner_description: Based on Material 3 design principles
 ---
 # Unity Theme
 
+![Unity]({{site.baseurl}}/assets/image/mobile.png)
+
 United design language, simple design and multipurpose theme
 
 

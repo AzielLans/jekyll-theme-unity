@@ -94,7 +94,7 @@ a {
 }
 img {
   @include shape-extra-large;
-  width: 100%;
+  max-width: 100%;
 }
 strong {
   font-family: $md-ref-typeface-brand;
