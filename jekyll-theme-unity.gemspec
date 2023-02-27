@@ -7,8 +7,18 @@ Gem::Specification.new do |spec|
   spec.email         = ["100028421+Involts@users.noreply.github.com"]
 
   spec.summary       = "Material 3 is a design language developed by Google in 2014."
-  spec.homepage      = "https://google.com"
+  spec.homepage      = "https://involts.github.io/jekyll-theme-unity/home"
   spec.license       = "MIT"
+
+  spec.metadata = {
+    "bug_tracker_uri"   => "https://github.com/Involts/jekyll-theme-unity/issues",
+    "documentation_uri" => "https://github.com/Involts/jekyll-theme-unity#readme",
+    "homepage_uri"      => "https://involts.github.io/jekyll-theme-unity/",
+    "source_code_uri"   => "https://github.com/Involts/jekyll-theme-unity",
+    "wiki_uri"          => "https://github.com/Involts/jekyll-theme-unity/wiki",
+    "plugin_type"       => "theme"
+  }
+
 
   spec.files         = `git ls-files -z`.split("\x0").select { |f| f.match(%r!^(assets|_layouts|_includes|_sass|LICENSE|bin|README|_config\.yml)!i) }
 
