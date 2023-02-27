@@ -194,6 +194,7 @@ button {
 }
 span {
   &[style^="display: inline !important;"] {
+    @include shape-small;
     &::before {
       display: flex;
       content: "warning";
@@ -203,6 +204,10 @@ span {
       line-height: 1;
       padding-right: 10px;
       padding-top: 13px;
+    }
+    a {
+      color: var(--md-sys-color-on-background);
+      font-weight: bold;
     }
     display: block;
     background-color: var(--md-sys-color-warning);
