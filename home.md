@@ -31,7 +31,7 @@ Follow the instructions in [jekyll Docs](https://jekyllrb.com/docs/installation/
 
 ## Step 1: Creating a site
 
-Create a new repository from the Unity Starter and name it <GH_USERNAME>.github.io, where GH_USERNAME represents your GitHub username.
+Create a new repository from the [Unity Starter](https://github.com/Involts/Unity-Theme-Starter/generate) and name it <GH_USERNAME>.github.io, where GH_USERNAME represents your GitHub username.
 
 ## Step 2: Installing Dependencies
 
