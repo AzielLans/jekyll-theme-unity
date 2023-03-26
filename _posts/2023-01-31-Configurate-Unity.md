@@ -111,7 +111,7 @@ And then copy the remaining image files (`.PNG` and `.ICO`) to cover the origina
 
 The following table will help you understand the changes to the favicon files:
 
-| File(s)             | From Online Tool                  | From Chirpy |
+| File(s)             | From Online Tool                  | From Unity |
 |---------------------|:---------------------------------:|:-----------:|
 | `*.PNG`             | ✓                                 | ✗           |
 | `*.ICO`             | ✓                                 | ✗           |
